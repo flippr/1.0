@@ -1,0 +1,10 @@
+sudo php app/console assetic:dump --watch
+sudo app/console cache:clear
+sudo php app/console assets:install
+sudo php app/console assetic:dump —-env=dev
+vagrant ssh
+cd /var/www/vennli/www
+php app/console assetic:dump --watch
+sudo bash /var/www/vennli/build/dev/rebuild_db.sh
+
+sudo /var/www/vennli/www/app/console vennli:assets:rebuild dev
